@@ -10,5 +10,5 @@ require("neo-tree").setup {
 }
 
 vim.keymap.set('n', '<leader>ee', function()
-    vim.cmd("NeoTreeFloatToggle")
+    vim.cmd("NeoTreeFocusToggle")
 end)
