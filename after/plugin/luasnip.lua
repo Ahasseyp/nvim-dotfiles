@@ -35,6 +35,9 @@ ls.add_snippets("python", {
         t({"", ""}),
         t({"", "\t"}), t("class Meta:"),
         t({"", "\t\t"}), t("ordering = ["), i(5, ""), t("]"),
+        t({"", ""}),
+        t({"", "\t"}), t("def __str__(self):"),
+        t({"", "\t\t"}), t("return "), i(6, "")
     })
 })
 
