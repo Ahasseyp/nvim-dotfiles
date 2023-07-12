@@ -119,4 +119,7 @@ return require("packer").startup(function(use)
             require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
+    use {
+        "folke/zen-mode.nvim"
+    }
 end)
