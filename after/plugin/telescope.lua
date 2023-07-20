@@ -31,8 +31,9 @@ require("telescope").setup {
         }
     },
 }
-require("telescope").load_extension "file_browser"
-require("telescope").load_extension "fzf"
+require("telescope").load_extension("file_browser")
+require("telescope").load_extension("fzf")
+require("telescope").load_extension("ht")
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
