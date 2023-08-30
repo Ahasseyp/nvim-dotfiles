@@ -125,14 +125,6 @@ return require("packer").startup(function(use)
     use {
         'kevinhwang91/nvim-bqf'
     }
-    use {
-        'mrcjkb/haskell-tools.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim', -- optional
-        },
-        branch = '1.x.x', -- recommended
-    }
     use {'junegunn/fzf', run = function()
         vim.fn['fzf#install']()
     end
