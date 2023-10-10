@@ -56,6 +56,17 @@ ls.add_snippets("python", {
 })
 
 ls.add_snippets("python", {
+    s("rmviewset", {
+        t({"class "}), i(1, "Panel"), i(2, "Model"), t("ViewSet("), i(3, "GenericViewSet"), t("):"),
+        t({"", '\t"""'}),
+        t({"", "\t"}), i(4, "Docstring"),
+        t({"", '\t"""'}),
+        t({"", ""}),
+        t({"", "\t"}), t("serializer_class = "), ri(2), t("Serializer"),
+    })
+})
+
+ls.add_snippets("python", {
     s("mcreate", {
         isn(1, {
             t({"CreateModelMixin as Create"})
