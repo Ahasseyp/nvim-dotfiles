@@ -127,6 +127,9 @@ return require("packer").startup(function(use)
     }
     use {'junegunn/fzf', run = function()
         vim.fn['fzf#install']()
-    end
-}
+    end}
+    use {
+        'rmagatti/goto-preview', config = function()
+            require('goto-preview').setup {}
+    end}
 end)
