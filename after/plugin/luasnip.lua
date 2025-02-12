@@ -111,3 +111,34 @@ ls.add_snippets("python", {
         i(1, "ROUTER"), t('.register("'), i(2, "url"), t('", '), i(3, "View"), t(', basename="'), ri(2), t('")')
     })
 })
+
+ls.add_snippets(nil, {
+  typescriptreact = {
+    s("clog", {
+      isn(1, {
+        t({"console.log('ACA ANDAMOS', "}), i(1), t({");"})
+      }, "")
+    })
+  },
+  typescript = {
+    s("clog", {
+      isn(1, {
+        t({"console.log('ACA ANDAMOS', "}), i(1), t({");"})
+      }, "")
+    })
+  },
+  javascriptreact = {
+    s("clog", {
+      isn(1, {
+        t({"console.log('ACA ANDAMOS', "}), i(1), t({");"})
+      }, "")
+    })
+  },
+  javascript = {
+    s("clog", {
+      isn(1, {
+        t({"console.log('ACA ANDAMOS', "}), i(1), t({");"})
+      }, "")
+    })
+  },
+})

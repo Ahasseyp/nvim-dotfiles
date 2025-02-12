@@ -28,6 +28,8 @@ vim.opt.foldlevel = 20
 
 vim.opt.clipboard = "unnamedplus"
 
+vim.opt.spell = false
+
 vim.g.mapleader = " "
 vim.g.python3_host_prog = "$HOME/.pyenv/shims/python"
 vim.g.black_linelength = 120

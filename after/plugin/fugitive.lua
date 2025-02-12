@@ -1,15 +1,16 @@
 local function toggleFugitiveGit()
-    if vim.fn.buflisted(vim.fn.bufname('fugitive:///*/.git//$')) ~= 0 then
-        vim.cmd[[ execute ":bdelete" bufname('fugitive:///*/.git//$') ]]
-    else
-        vim.cmd [[
+	if vim.fn.buflisted(vim.fn.bufname("fugitive:///*/.git//$")) ~= 0 then
+		vim.cmd([[ execute ":bdelete" bufname('fugitive:///*/.git//$') ]])
+	else
+		vim.cmd([[
         vert bo Git
         " setlocal winfixwidth
-        vertical resize 50
-        ]]
-    end
+        vertical resize 70
+        ]])
+	end
 end
-vim.keymap.set('n', '<leader>g', toggleFugitiveGit)
+vim.keymap.set("n", "<leader>g", toggleFugitiveGit)
+--vim.keymap.set('n', 'cc', vim.cmd[[ Git commit --no-verify ]])
 
 --local function toggleFugitiveGitTerm()
 --    if vim.fn.buflisted(vim.fn.bufname('fugitive:///*/.git//$')) ~= 0 then
