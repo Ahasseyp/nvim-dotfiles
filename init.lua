@@ -1,1 +1,2 @@
-require("ahasseyp")
+require("ahasseyp.core")
+require("ahasseyp.lazy")
