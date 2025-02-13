@@ -23,5 +23,10 @@ return {
 			},
 		},
 		custom_filetypes = {}, -- see the extension section to learn how it works
+		extension = {
+			queries = {
+				"astro",
+			},
+		},
 	}, -- your configuration
 }
