@@ -2,6 +2,11 @@ return {
 	"L3MON4D3/LuaSnip",
 	config = function()
 		local ls = require("luasnip")
+
+		vim.keymap.set({ "i", "s" }, "<C-d>", function()
+			ls.jump(1)
+		end, { silent = true })
+
 		local s = ls.snippet
 		local t = ls.text_node
 		local i = ls.insert_node
