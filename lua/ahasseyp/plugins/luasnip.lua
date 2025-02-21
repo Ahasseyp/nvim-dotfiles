@@ -183,42 +183,28 @@ return {
 			}),
 		})
 
+		local clog_snippet = s("clog", {
+			isn(1, {
+				t({ "console.log('ACA ANDAMOS', '" }),
+				ri(1),
+				t({ "', " }),
+				i(1),
+				t({ ");" }),
+			}, ""),
+		})
+
 		ls.add_snippets(nil, {
 			typescriptreact = {
-				s("clog", {
-					isn(1, {
-						t({ "console.log('ACA ANDAMOS', " }),
-						i(1),
-						t({ ");" }),
-					}, ""),
-				}),
+				clog_snippet,
 			},
 			typescript = {
-				s("clog", {
-					isn(1, {
-						t({ "console.log('ACA ANDAMOS', " }),
-						i(1),
-						t({ ");" }),
-					}, ""),
-				}),
+				clog_snippet,
 			},
 			javascriptreact = {
-				s("clog", {
-					isn(1, {
-						t({ "console.log('ACA ANDAMOS', " }),
-						i(1),
-						t({ ");" }),
-					}, ""),
-				}),
+				clog_snippet,
 			},
 			javascript = {
-				s("clog", {
-					isn(1, {
-						t({ "console.log('ACA ANDAMOS', " }),
-						i(1),
-						t({ ");" }),
-					}, ""),
-				}),
+				clog_snippet,
 			},
 		})
 	end,
