@@ -29,4 +29,9 @@ return {
 			},
 		},
 	}, -- your configuration
+	config = function()
+		local keymap = vim.keymap -- for conciseness
+
+		keymap.set("n", "<leader>tw", "<cmd>TailsindSort<CR>", { desc = "Sort tailwind classes" }) -- sort tailwind classes
+	end,
 }
