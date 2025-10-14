@@ -6,10 +6,10 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
+				javascript = { "prettier", "biome" },
+				typescript = { "prettier", "biome" },
+				javascriptreact = { "prettier", "biome" },
+				typescriptreact = { "prettier", "biome" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
@@ -26,6 +26,14 @@ return {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
+			},
+			formatters = {
+				prettier = {
+					require_cwd = true,
+				},
+				biome = {
+					require_cwd = true,
+				},
 			},
 		})
 

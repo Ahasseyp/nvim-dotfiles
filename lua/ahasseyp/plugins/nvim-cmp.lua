@@ -2,7 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-		"tailwind-tools",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		{
@@ -53,13 +52,13 @@ return {
 			}),
 
 			-- configure lspkind for vs-code like pictograms in completion menu
-			formatting = {
-				format = lspkind.cmp_format({
-					before = require("tailwind-tools.cmp").lspkind_format,
-					maxwidth = 50,
-					ellipsis_char = "...",
-				}),
-			},
+			-- formatting = {
+			-- 	format = lspkind.cmp_format({
+			-- 		before = require("tailwind-tools.cmp").lspkind_format,
+			-- 		maxwidth = 50,
+			-- 		ellipsis_char = "...",
+			-- 	}),
+			-- },
 		})
 	end,
 }

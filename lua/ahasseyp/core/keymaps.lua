@@ -1,5 +1,29 @@
 local keymap = vim.keymap
 
+-- Function to close all buffers except those open in tabs
+local function close_buffers_except_tabs()
+	-- Get all tab pages
+	local tab_pages = vim.api.nvim_list_tabpages()
+	local buffers_to_keep = {}
+
+	-- Collect all buffers that are open in any tab
+	for _, tab in ipairs(tab_pages) do
+		local windows = vim.api.nvim_tabpage_list_wins(tab)
+		for _, win in ipairs(windows) do
+			local buf = vim.api.nvim_win_get_buf(win)
+			buffers_to_keep[buf] = true
+		end
+	end
+
+	-- Get all buffers and close those not in tabs
+	local all_buffers = vim.api.nvim_list_bufs()
+	for _, buf in ipairs(all_buffers) do
+		if vim.api.nvim_buf_is_valid(buf) and not buffers_to_keep[buf] then
+			vim.api.nvim_buf_delete(buf, { force = true })
+		end
+	end
+end
+
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
@@ -20,6 +44,9 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
+-- buffer management
+keymap.set("n", "<leader>bx", close_buffers_except_tabs, { desc = "Close all buffers except those in tabs" })
+
 -- move text in visual mode
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
@@ -37,3 +64,6 @@ keymap.set("n", "<leader>y", '"+y')
 keymap.set("n", "<leader>Y", '"+Y')
 
 keymap.set("n", "<leader>sw", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Subsitute word under cursor" })
+
+-- tailwind
+keymap.set("n", "<leader>tw", "<cmd>TailwindSort<CR>", { desc = "Sort tailwind classes" }) -- sort tailwind classes
