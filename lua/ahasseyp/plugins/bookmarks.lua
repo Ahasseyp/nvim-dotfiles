@@ -13,6 +13,7 @@ return {
 		local opts = {} -- check the "./lua/bookmarks/default-config.lua" file for all the options
 		require("bookmarks").setup(opts) -- you must call setup to init sqlite db
 
+		vim.keymap.set({ "n", "v" }, "<leader>ml", "<cmd>BookmarksList<cr>", { desc = "Open Bookmarks List." })
 		vim.keymap.set({ "n", "v" }, "<leader>mt", "<cmd>BookmarksTree<cr>", { desc = "Open Bookmarks Tree." })
 		vim.keymap.set(
 			{ "n", "v" },
