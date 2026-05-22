@@ -67,3 +67,4 @@ keymap.set("n", "<leader>sw", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { de
 
 -- tailwind
 keymap.set("n", "<leader>tw", "<cmd>TailwindSort<CR>", { desc = "Sort tailwind classes" }) -- sort tailwind classes
+keymap.set("n", "<leader>cd", "<cmd>CodeDiff<cr>", { desc = "Toggle code diff review" })
